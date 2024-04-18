@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grading Sytem</title>
+<style>
+    body {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+            padding: 10px;
+            max-width: 70%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+    
+        #result {
+            font-weight: bold;
+        }
+</style>
+</head>
+<body>
+<h2>Grading</h2>
+<form id="gradeForm" >
+    <label for="subject1">English:</label>
+    <input class="eng" type="number" id="subject1"><br>
+    <label for="subject2">Kiswahili:</label>
+    <input class="kisw" type="number" id="subject2"><br>
+    <label for="subject3">Mathematics:</label>
+    <input class="maths" type="number" id="subject3"><br>
+    <label for="subject4">Physics:</label>
+    <input class="sci" type="number" id="subject4"><br>
+    <label for="subject5">Chemistry:</label>
+    <input class="soc" type="number" id="subject5"><br>
+    <button type="submit">Grade</button>
+</form>
+<div id="result"></div>
+
+<script>
+    // your code here
+</script>
+</body>
+</html>
