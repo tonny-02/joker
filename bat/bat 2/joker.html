@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>generator</title>
+</head>
+<body>
+    <button onclick="changeColorAndQuote()">New Quote</button>
+    <p id="quote"></p>
+    <script>
+             const quotes = [
+                "Life is what happens when you're busy making other plans.",
+                "The only way to do great work is to love what you do.",
+                "In three words I can sum up everything I've learned about life: it goes on."
+            ];
+    
+            function getRandomQuote() {
+                return quotes[Math.floor(Math.random() * quotes.length)];
+            }
+    
+            function changeColorAndQuote() {
+                const newColor = getRandomColor();
+                document.body.style.backgroundColor = newColor;
+                document.getElementById("quote").textContent = getRandomQuote();
+            }
+    
+            function getRandomColor() {
+                const letters = "0123456789ABCDEF";
+                let color = "#";
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+ 
+    </script>
+</body>
+</html>

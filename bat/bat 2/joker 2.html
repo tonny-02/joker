@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> joker</title>
+</head>
+<body>
+    <button onclick="joker()">New Quote</button>
+    <p id="quote"></p>
+<script>
+    function joker(){
+        var quotes =[
+    "ni kubaya",
+    "kunamoto",
+    "acha ufala"
+    ];
+    //console,log(quotes.length)
+    var quoteindex =Math.floor(Math.random()*quotes.length);
+    
+    document.getElementById("quote").innerHTML=quotes[quoteindex]
+    //generate colors
+
+    var color =[
+        "red",
+        "blue",
+        "aqua"
+    ]
+    var colorindex =Math.floor(Math.random()*color.length);
+    
+    document.body.style.background = color[colorindex];
+
+}
+
+    
+    
+    
+    </script>    
+</body>
+</html>
