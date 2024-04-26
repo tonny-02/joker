@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker</title>
+</head>
+<body>
+    <div class="container">
+        <h1 style="padding: 20px;">Budget Tracker</h1>
+        <form id="form">
+            <label for="subject1">Enter Your Budget:</label>
+            <input class="eng" type="number" id="subject1" style="width: 300px;"><br>
+            <button type="button" onclick="setBudget()" style="background-color: green; width: 300px; color: blue;">Set Budget</button>
+
+            <label for="subject2">Expense Description:</label>
+            <input class="kisw" placeholder="" id="subject2" style="width: 300px;"><br>
+
+            <label for="subject3">Expense Amount:</label>
+            <input class="maths" type="number" id="subject3" style="width: 300px;"><br>
+
+            <button type="button" onclick="updateRemainingBudget()" style="background-color: green; width: 300px; color: blue;">Add Expense</button>
+            <p id="remaining-budget">Remaining Budget: $0</p>
+        </form>
+    </div>
+    <script>
+        function setBudget() {
+            let budget = parseFloat(document.getElementById('subject1').value);
+            document.getElementById('remaining-budget').innerText = `Remaining Budget: $${budget.toFixed(2)}`;
+        }
+
+        function updateRemainingBudget() {
+            let budget = parseFloat(document.getElementById('subject1').value);
+            let expense = parseFloat(document.getElementById('subject3').value);
+            let remainingBudget = budget - expense;
+            document.getElementById('remaining-budget').innerText = `Remaining Budget: $${remainingBudget.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
+```

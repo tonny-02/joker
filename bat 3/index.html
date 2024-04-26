@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <h1 
+        style="padding: 20px;"
+        >Budget Tracker</h1>
+        <form id="form">
+                <label for="subject1">Enter You Bubget:</label>
+                <input class="eng" type="number" id="subject1"
+
+                      style="width: 300px;"
+                ><br>
+                <button type="button1" onclick="setbudget()"
+                      style="background-color: green;
+                              width: 300px;
+                              color: blue;
+                      
+                      "                  
+                
+                >Set Budget</button>
+
+                <label for="subject2">Expense Description:</label>
+                <input class="kisw" placeholder ="" id="subject2"
+
+                          style="width: 300px;"  
+                ><br>
+                <label for="subject3">Expense Amount:</label>
+                <input class="maths" type="number" id="subject3" 
+                         style="width: 300px;"
+                          
+                
+                ><br>
+                <button type="button" onclick="updateRemainingBudget()"
+                        style="background-color: green;
+                               width: 300px;
+                               color: blue;" 
+                               
+                >Add Expense</button>
+                <p id="remaining-budget">Remaining Budget: $0</p>
+                                
+        </form>
+    </div>
+    <script>
+        // Variable to store the initial budget
+        var budget = 0;
+    
+        // Function to set the budget
+        function setBudget() {
+            budget = parseFloat(document.getElementById("subject1").value);
+            // You can add validation here to ensure budget is a valid number
+            alert("Budget set to: $" + budget);
+        }
+    
+        // Function to add expense
+        function addExpense() {
+            var description = document.getElementById("subject2").value;
+            var amount = parseFloat(document.getElementById("subject3").value);
+            // You can add validation here to ensure amount is a valid number
+            
+            if (isNaN(budget)) {
+                alert("Please set the budget first!");
+                return;
+            }
+    
+            if (isNaN(amount)) {
+                alert("Please enter a valid expense amount!");
+                return;
+            }
+    
+            if (amount > budget) {
+                alert("Expense amount exceeds the budget!");
+                return;
+            }
+    
+            budget -= amount; // Deduct the expense from the budget
+            alert("Expense added: " + description + " - $" + amount + "\nRemaining Budget: $" + budget);
+            updateRemainingBudget();
+        }
+    
+        // Function to update remaining budget in the UI
+        function updateRemainingBudget() {
+            document.getElementById("remaining-budget").innerText = "Remaining Budget: $" + budget;
+        }
+    </script>
+</body>
+</html>

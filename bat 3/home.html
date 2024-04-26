@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <h1 
+        style="padding: 20px;"
+        >Budget Tracker</h1>
+        <form id="form">
+                <label for="subject1">Enter You Bubget:</label>
+                <input class="eng" type="number" id="subject1"
+
+                      style="width: 300px;"
+                ><br>
+                <button type="button" onclick="setbudget()"
+                      style="background-color: green;
+                              width: 300px;
+                              color: blue;
+                      
+                      "                  
+                
+                >Set Budget</button>
+
+                <label for="subject2">Expense Description:</label>
+                <input class="kisw" placeholder ="" id="subject2"
+
+                          style="width: 300px;"  
+                ><br>
+                <label for="subject3">Expense Amount:</label>
+                <input class="maths" type="number" id="subject3" 
+                         style="width: 300px;"
+                          
+                
+                ><br>
+                <button type="button" onclick="updateRemainingBudget()"
+                style="background-color: green;
+                       width: 300px;
+                       color: blue;" 
+                               
+                >Add Expense</button>
+                <p id="remaining-budget">Remaining Budget: $0</p>
+                                
+        </form>
+    </div>
+    <script>
+         document.getElementById('form').addEventListener("button"), function(event) {
+        event.preventDefault();
+        
+        let subject1 = parseFloat(document.getElementById('subject1').value);
+        let subject2 = parseFloat(document.getElementById('subject2').value);
+        let subject3 = parseFloat(document.getElementById('subject3').value);
+       
+        
+        let average = (subject1 - subject3 );
+        |}
+    
+        
+        document.getElementById('remaining-budget').innerText = `updateRemainingBudget: ${average.toFixed(2)} (${letterGrade})`;
+    </script>
+</body>
+</html>
