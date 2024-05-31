@@ -9,34 +9,37 @@
 <body>
     
 
-    <div class="hope"><h1>Personal Budget Tracker</h1>
+    <div class="hope">
+        <h1>Personal Budget Tracker</h1>
         <p>income</p>
         <hr>
-        <input type="text" placeholder="description" style="height:30px ;">
-        <input type="text" placeholder="amount"style="height:30px ;">
-        <button>Add income</button>
-        <p>Total income <span style="color :gray">$0.00</span></p>
+        <input id="de" type="text" placeholder="description" style="height:30px ;">
+        <input id="in" type="text" placeholder="amount"style="height:30px ;">
+        <button onclick="addIncome()">Add income</button>
+        <p>Total income <span id="T" style="color :gray">$0.00</span></p>
          <hr>
          <p>Expenses</p>
         <hr>
-        <input type="text" placeholder="description"style="height:30px ;">
-        <input type="text" placeholder="amount"style="height:30px ;">
-        <button>Add Expenses</button>
-        <p>Total Expenses <span style="color :gray">$0.00</span></p>
-        <p>Savings</p>
+        <input id="" type="text" placeholder="description"style="height:30px ;">
+        <input id="E" type="text" placeholder="amount"style="height:30px ;">
+        <button onclick="AddExpenses()">Add Expenses</button>
+        <p>Total Expenses <span id="TE" style="color :gray">$0.00</span></p>
         <hr>
-        <input type="text" placeholder="description"style="height:30px ;">
-        <input type="text" placeholder="amount"style="height:30px ;"ljnh>
-        <button>Add Savings</button>
-        <p>Total savings <span style="color :gray">$0.00</span></p>
+        <p>Savings</p>
+        
+        <input id="s" type="text" placeholder="description"style="height:30px ;">
+        <input id="SA" type="text" placeholder="amount"style="height:30px ;"ljnh>
+        <button onclick="AddSavings()">Add Savings</button>
+        <p>Total savings <span id="TS" style="color :gray">$0.00</span></p>
          <hr>
         
          <h1>Budget Summary</h1>
          <hr>
-         <p>Total Budget <span style="color :gray">$0.00</span></p>
-         <p>Remaining Budget <span style="color :gray">$0.00</span></p>
+         <p>Total Budget <span id="TB" style="color :gray">$0.00</span></p>
+         <p>Remaining Budget <span id="RB" style="color :gray">$0.00</span></p>
 
     </div>
- 
+ <script src="idex.js"></script>
+
 </body>
 </html>
