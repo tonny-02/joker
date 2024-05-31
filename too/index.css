@@ -1,0 +1,22 @@
+.hope{
+    background: blue ;
+    width: 600px;
+    height: 800px;
+    color: white;
+
+    
+}
+body{
+    background-color:white;
+    height: 900px;
+    width: 450px;
+}
+button {
+    background-color: red;
+    width: 160px;
+    height:40px ;
+    color: white;
+}
+span{
+    color: whitesmoke;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="hope">
+        <h1>Personal Budget Tracker</h1>
+        <p>Income</p>
+        <hr>
+        <input id="incomeDescription" type="text" placeholder="Description" style="height: 30px;">
+        <input id="incomeAmount" type="text" placeholder="Amount" style="height: 30px;">
+        <button onclick="addIncome()">Add Income</button>
+        <p>Total Income <span id="totalIncome" style="color: gray">$0.00</span></p>
+        <hr>
+        <p>Expenses</p>
+        <hr>
+        <input id="expenseDescription" type="text" placeholder="Description" style="height: 30px;">
+        <input id="expenseAmount" type="text" placeholder="Amount" style="height: 30px;">
+        <button onclick="addExpense()">Add Expense</button>
+        <p>Total Expenses <span id="totalExpenses" style="color: gray">$0.00</span></p>
+        <p>Savings</p>
+        <hr>
+        <input id="savingsDescription" type="text" placeholder="Description" style="height: 30px;">
+        <input id="savingsAmount" type="text" placeholder="Amount" style="height: 30px;">
+        <button onclick="addSavings()">Add Savings</button>
+        <p>Total Savings <span id="totalSavings" style="color: gray">$0.00</span></p>
+        <hr>
+        
+        <h1>Budget Summary</h1>
+        <hr>
+        <p>Total Budget <span id="totalBudget" style="color: gray">$0.00</span></p>
+        <p>Remaining Budget <span id="remainingBudget" style="color: gray">$0.00</span></p>
+    </div>
+
+    <script>
+        let totalIncome = 0;
+        let totalExpenses = 0;
+        let totalSavings = 0;
+        
+        function addIncome() {
+            let amount = parseFloat(document.getElementById('incomeAmount').value);
+            totalIncome += amount;
+            document.getElementById('totalIncome').textContent = '$' + totalIncome.toFixed(2);
+            updateBudget();
+        }
+        
+        function addExpense() {
+            let amount = parseFloat(document.getElementById('expenseAmount').value);
+            totalExpenses += amount;
+            document.getElementById('totalExpenses').textContent = '$' + totalExpenses.toFixed(2);
+            updateBudget();
+        }
+        
+        function addSavings() {
+            let amount = parseFloat(document.getElementById('savingsAmount').value);
+            totalSavings += amount;
+            document.getElementById('totalSavings').textContent = '$' + totalSavings.toFixed(2);
+            updateBudget();
+        }
+        
+        function updateBudget() {
+            let totalBudget = totalIncome - totalExpenses - totalSavings;
+            document.getElementById('totalBudget').textContent = '$' + totalBudget.toFixed(2);
+            let remainingBudget = totalBudget;
+            document.getElementById('remainingBudget').textContent = '$' + remainingBudget.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
